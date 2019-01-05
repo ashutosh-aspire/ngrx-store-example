@@ -1,0 +1,19 @@
+<div *ngIf="todos">
+  <h2>To Do's</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>To Do</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let todo of todos | async">
+        <td *ngIf="todo">{{todo.id}}</td>
+        <td *ngIf="todo">{{todo.todo}}</td>
+        <td *ngIf="todo" (click)='removeTodo(todo.id)'>Delete</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
